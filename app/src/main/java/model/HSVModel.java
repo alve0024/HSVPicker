@@ -1,14 +1,16 @@
+/**
+ * Created by Leonardo Alps (alve0024@algonquinlive.com)
+ *
+ * Implementation of the HSV Model
+ *
+ */
+
 package model;
 
 
 import java.util.Observable;
 import android.graphics.Color;
 
-
-
-/**
- * Created by leonardoalps on 2016-10-21.
- */
 
 public class HSVModel extends Observable {
 
@@ -26,7 +28,7 @@ public class HSVModel extends Observable {
     private Integer lightness;
 
     public HSVModel() {
-        this(MAX_HUE, MAX_SATURATION, MAX_LIGHTNESS);
+        this(MIN_HUE, MIN_SATURATION, MIN_LIGHTNESS);
     }
 
     public HSVModel(Integer hue, Integer saturation, Integer lightness ) {
@@ -64,19 +66,13 @@ public class HSVModel extends Observable {
         return lightness;
     }
 
-    public void setHSV(Integer hue, Integer saturation, Integer lightness){
-        this.hue = hue;
-        this.saturation = saturation;
-        this.lightness = lightness;
-    }
-
     public int getColorFromHSV() {
         int alpha = 0xFF;
-        float[] hsv = new float[4];
+        float[] hsv = new float[3];
 
         hsv[0] = this.hue;
-        hsv[1] = this.saturation / 100;
-        hsv[2] = this.lightness / 100;
+        hsv[1] = (float) this.saturation / 100;
+        hsv[2] = (float) this.lightness  / 100;
         return Color.HSVToColor(alpha, hsv);
     }
 

@@ -6,7 +6,6 @@ package com.algonquincollege.alve0024.hsvcolor;
 
 import android.app.DialogFragment;
 import android.graphics.Color;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,19 +15,17 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.view.View;
 import android.widget.Toast;
-import android.graphics.drawable.Drawable;
-
-
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
-
 import java.util.Observable;
 import java.util.Observer;
 
 import model.HSVModel;
 
+/**
+ * MainActivity (Controller) - Implementing Observer's Interface
+ *
+ * Responsible to make the communication between the View and the Model
+ *
+ */
 public class MainActivity extends AppCompatActivity
         implements Observer
         , SeekBar.OnSeekBarChangeListener {
@@ -39,13 +36,16 @@ public class MainActivity extends AppCompatActivity
         ABOUT_DIALOG_TAG = "About Dialog";
     }
 
+    // Define the TextView from the View
     private TextView mColorSwatch;
-    private SeekBar mHueSeekBar;
-    private SeekBar mSaturationSeekBar;
-    private SeekBar mLightnessSeekBar;
     private TextView mHueLabel;
     private TextView mSaturationLabel;
     private TextView mLightnessLabel;
+    // Define the SeekBar from the View
+    private SeekBar mHueSeekBar;
+    private SeekBar mSaturationSeekBar;
+    private SeekBar mLightnessSeekBar;
+    // Define the Button from the View
     private Button mBlackButton;
     private Button mRedButton;
     private Button mLimeButton;
@@ -61,18 +61,17 @@ public class MainActivity extends AppCompatActivity
     private Button mPurpleButton;
     private Button mTealButton;
     private Button mNavyButton;
+    // Define the Model
     private HSVModel mModel;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Instantiate the Model Class
+        // Initiate with Black - Hue: 0° Sat: 0%  Val: 0%
         mModel = new HSVModel(0, 0, 0);
         mModel.addObserver(this);
 
@@ -103,256 +102,144 @@ public class MainActivity extends AppCompatActivity
         mTealButton = (Button) findViewById(R.id.tealButton);
         mNavyButton = (Button) findViewById(R.id.navyButton);
 
+        // Set max values to the SeekBar components from the Model
         mHueSeekBar.setMax(mModel.MAX_HUE);
         mSaturationSeekBar.setMax(mModel.MAX_SATURATION);
         mLightnessSeekBar.setMax(mModel.MAX_LIGHTNESS);
 
+        // Set the Even Listener to the SeekBar
         mHueSeekBar.setOnSeekBarChangeListener(this);
         mSaturationSeekBar.setOnSeekBarChangeListener(this);
         mLightnessSeekBar.setOnSeekBarChangeListener(this);
 
-
+        // BlackButton Event Listener
         mBlackButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color = getResources().getColor(R.color.black);
-                float[] hsv = new float[3];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
 
+        /**
+         * Implementation of the Event onClick of the Color Buttons
+         * After read the color, the updateSeekBarProgress() method is called
+         * and the Model and the View is updated
+         */
         mRedButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color =  getResources().getColor(R.color.red);
-                float[] hsv = new float[3];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
+
 
         mLimeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color =  getResources().getColor(R.color.lime);
-                float[] hsv = new float[3];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
 
         mBlueButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color =  getResources().getColor(R.color.blue);
-                float[] hsv = new float[4];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
 
         mYellowButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color =  getResources().getColor(R.color.yellow);
-                float[] hsv = new float[4];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
 
         mCyanButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color =  getResources().getColor(R.color.cyan);
-                float[] hsv = new float[3];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
 
         mMagentaButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color =  getResources().getColor(R.color.margenta);
-                float[] hsv = new float[3];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
 
         mSilverButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color =  getResources().getColor(R.color.silver);
-                float[] hsv = new float[3];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
 
         mGrayButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color =  getResources().getColor(R.color.gray);
-                float[] hsv = new float[3];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
 
         mMaroonButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color =  getResources().getColor(R.color.marron);
-                float[] hsv = new float[3];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
 
         mOliveButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color =  getResources().getColor(R.color.olive);
-                float[] hsv = new float[3];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
 
         mGreenButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color =  getResources().getColor(R.color.green);
-                float[] hsv = new float[3];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
 
         mPurpleButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color =  getResources().getColor(R.color.purple);
-                float[] hsv = new float[3];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
 
         mTealButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color = getResources().getColor(R.color.teal);
-                float[] hsv = new float[3];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
 
         mNavyButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int color = getResources().getColor(R.color.navy);
-                float[] hsv = new float[3];
-                Color.colorToHSV(color, hsv);
-                mHueSeekBar.setProgress((int) hsv[0]);
-                mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
-                mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
-                System.out.println("Hue: "+hsv[0]+" Sat: "+hsv[1]+" Lig: "+hsv[2]+" Col: "+color);
-                Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+
-                        "° S: "+(int) hsv[1]*100+"%"+
-                        " V: "+(int) hsv[2]*100+"%", Toast.LENGTH_LONG ).show();
+                updateSeekBarProgress(color);
             }
         });
 
 
+        /**
+         * Set the Event OnLongClick of the Color Swatch displaying a toast message
+         */
         mColorSwatch.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                Toast.makeText( getApplicationContext(), "H: "+mModel.getHue()+
-                                                         "° S: "+mModel.getSaturation()+
-                                                         " V: "+mModel.getLightness(), Toast.LENGTH_LONG ).show();
+                Toast.makeText( getApplicationContext(), "H: "+mModel.getHue()+"\u00B0 "+
+                                                         "S: "+mModel.getSaturation()+"% "+
+                                                         "V: "+mModel.getLightness()+"% ", Toast.LENGTH_SHORT ).show();
 
                 return false;
             }
         });
 
         this.updateView();
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     /**
@@ -360,37 +247,61 @@ public class MainActivity extends AppCompatActivity
      */
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        // Did the user cause this event?
-        // YES > continue
-        // NO  > leave this method
-//        if ( fromUser == false ) {
-//            return;
-//        }
         // Determine which <SeekBark> caused the event (switch + case)
         // GET the SeekBar's progress, and SET the model to it's new value
-        switch (seekBar.getId()) {
-            case R.id.hueSB:
-                mModel.setHue(mHueSeekBar.getProgress());
-                break;
+        if(fromUser) {
+            switch (seekBar.getId()) {
+                case R.id.hueSB:
+                    mModel.setHue(mHueSeekBar.getProgress());
+                    CharSequence hueLabel = getResources().getText(R.string.hue_label);
+                    mHueLabel.setText(hueLabel + " " + mHueSeekBar.getProgress()+"\u00B0");
+                    break;
 
-            case R.id.saturationSB:
-                mModel.setSaturation(mSaturationSeekBar.getProgress());
-                break;
+                case R.id.saturationSB:
+                    mModel.setSaturation(mSaturationSeekBar.getProgress());
+                    CharSequence saturationLabel = getResources().getText(R.string.saturation_label);
+                    mSaturationLabel.setText(saturationLabel + " " + mSaturationSeekBar.getProgress()+"%");
+                    break;
 
-            case R.id.lightnessSB:
-                mModel.setLightness(mLightnessSeekBar.getProgress());
-                break;
+                case R.id.lightnessSB:
+                    mModel.setLightness(mLightnessSeekBar.getProgress());
+                    CharSequence lightnessLabel = getResources().getText(R.string.lightness_label);
+                    mLightnessLabel.setText(lightnessLabel + " " + mLightnessSeekBar.getProgress()+"%");
+                    break;
+            }
+        } else {
+            switch (seekBar.getId()) {
+                case R.id.hueSB:
+                    mModel.setHue(mHueSeekBar.getProgress());
+                    break;
+
+                case R.id.saturationSB:
+                    mModel.setSaturation(mSaturationSeekBar.getProgress());
+                    break;
+
+                case R.id.lightnessSB:
+                    mModel.setLightness(mLightnessSeekBar.getProgress());
+                    break;
+            }
         }
     }
 
     @Override
     public void onStartTrackingTouch(SeekBar seekBar) {
-        // No-Operation
+        // No code in here
     }
 
+    /**
+     * This method is called automatically after the user releases SeekBar
+     * Upates the label informing the user the status of the HSV
+     * @param seekBar
+     */
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
-        // No-Operation
+        mHueLabel.setText(getResources().getText(R.string.hue_label));
+        mSaturationLabel.setText(getResources().getText(R.string.saturation_label));
+        mLightnessLabel.setText(getResources().getText(R.string.lightness_label));
+
     }
 
     // The Model has changed state!
@@ -400,31 +311,41 @@ public class MainActivity extends AppCompatActivity
         this.updateView();
     }
 
+
+    /**
+     * Update the progress of the Hue SeekBar
+     */
     private void updateHueSB() {
         mHueSeekBar.setProgress(mModel.getHue());
-        CharSequence hueLabel = getResources().getText(R.string.hue_label);
-        mHueLabel.setText(hueLabel + " " + mHueSeekBar.getProgress()+"°");
+
     }
 
+    /**
+     * Update the progress of the Saturation SeekBar
+     */
     private void updateSaturationSB() {
         mSaturationSeekBar.setProgress(mModel.getSaturation());
-        CharSequence saturationLabel = getResources().getText(R.string.saturation_label);
-        mSaturationLabel.setText(saturationLabel + " " + mSaturationSeekBar.getProgress()+"%");
+
     }
 
+    /**
+     * Update the progress of the Lightness SeekBar
+     */
     private void updateLightnessSB() {
         mLightnessSeekBar.setProgress(mModel.getLightness());
-        CharSequence lightnessLabel = getResources().getText(R.string.lightness_label);
-        mLightnessLabel.setText(lightnessLabel + " " + mLightnessSeekBar.getProgress()+"%");
+
     }
 
+    /**
+     * Update Color Swatch (TextView)
+     */
     private void updateColorSwatch() {
-        int ColorSwatch = mModel.getColorFromHSV();
-        System.out.println("ColorSwatch: "+ColorSwatch);
         mColorSwatch.setBackgroundColor(mModel.getColorFromHSV());
     }
 
-    // synchronize each View component with the Model
+    /**
+     * Synchronize each View component with the Model
+     */
     public void updateView() {
         this.updateColorSwatch();
         this.updateHueSB();
@@ -434,43 +355,10 @@ public class MainActivity extends AppCompatActivity
 
 
     /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     * Create the options menu
+     * @param menu
+     * @return always true
      */
-    public Action getIndexApiAction() {
-        Thing object = new Thing.Builder()
-                .setName("Main Page") // TODO: Define a title for the content shown.
-                // TODO: Make sure this auto-generated URL is correct.
-                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
-                .build();
-        return new Action.Builder(Action.TYPE_VIEW)
-                .setObject(object)
-                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
-                .build();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        AppIndex.AppIndexApi.start(client, getIndexApiAction());
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        AppIndex.AppIndexApi.end(client, getIndexApiAction());
-        client.disconnect();
-    }
-
-
-    // Create the options menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -478,7 +366,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    // TODO: add this method to handle when the user selects a menu item
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -491,7 +379,24 @@ public class MainActivity extends AppCompatActivity
             newFragment.show( getFragmentManager(), ABOUT_DIALOG_TAG );
             return true;
         }
-
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Method called onClick of each button
+     * @param color is passed to be converted to HSV
+     * and the View is updated.
+     */
+    public void updateSeekBarProgress(int color) {
+        float[] hsv = new float[3];
+        Color.colorToHSV(color, hsv);
+
+        mHueSeekBar.setProgress((int) hsv[0]);
+        mSaturationSeekBar.setProgress((int) (hsv[1] * 100));
+        mLightnessSeekBar.setProgress((int) (hsv[2] * 100));
+        Toast.makeText( getApplicationContext(), "H: "+(int) hsv[0]+"\u00B0 "+
+                "S: "+(int) hsv[1]*100+"% "+
+                "V: "+(int) hsv[2]*100+"% ", Toast.LENGTH_SHORT ).show();
+
     }
 }

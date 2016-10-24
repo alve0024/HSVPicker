@@ -2,184 +2,166 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_3d784ae00b98b19c3752674c96eede7ed29fdac2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="24.0.2"
         sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_5717a94e77414f12bf298e14075a196683b64429/classes.dex" />
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_5717a94e77414f12bf298e14075a196683b64429.jar" />
     </item>
     <item
-        is-multidex="true"
+        is-multidex="false"
+        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_3d784ae00b98b19c3752674c96eede7ed29fdac2.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="24.0.2"
         sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-8.4.0_25525fd9f1f4fb6f8a94e0007b0fcb3b7f8c9ff1/classes.dex" />
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appindexing-8.4.0_25525fd9f1f4fb6f8a94e0007b0fcb3b7f8c9ff1.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_be73497f5537f09c6f78ae0105759a92fd026dae/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="431eb0a04e33c4b2d0cf253ace3436e79a8bbabb">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b40f34ed8dfa401981a55a11d57e70c54fa9044a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_2b96c97bb48f2e70d0a8dfd94708781f3975912c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_f7f1620e77a35caffee6f83ceeadf42ed26d6924/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_b92e19b3f30fd8b6082a699f8d6732e3793ded0a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_e80c3dff41f48e9f866d5a2d71c07afec392b466/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="1849cd31f2f55241b06a2d009826b38a444727f8">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_82d0b7231a4a3dfda035be8aa998446f5bf36062/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_77a8cb30431786c6efd908d8cd2b342018ddd863/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_32ced7427e2aa5c471de451a442d1099014fa860/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="24.0.2"
         sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_b584e4b00fe76f94c9f4ecbe136b40025285d36b/classes.dex" />
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_b584e4b00fe76f94c9f4ecbe136b40025285d36b.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
         optimize="true"
         revision="24.0.2"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_5ce007d6b53b147696bf9d0dc1674d95450091b8/classes.dex" />
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_b92e19b3f30fd8b6082a699f8d6732e3793ded0a.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
         optimize="true"
         revision="24.0.2"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_1e33a89edf552ac7975a9832260d3885ebb56835/classes.dex" />
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_f7f1620e77a35caffee6f83ceeadf42ed26d6924.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
         optimize="true"
         revision="24.0.2"
-        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-8.4.0_6b75cce8966dbf37f6bbd84cbd59eea12cd818a1/classes.dex" />
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_77a8cb30431786c6efd908d8cd2b342018ddd863.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-8.4.0_de7aba95ec5cf10362355216314e96f7c6aa94e7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_ebe61740b67ea7b97f4baea7052fa84527a346f6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_996afadb3b9a6bd5e19d6252e3be17bcac69dfe3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="24.0.2"
         sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_960b19c39170b271db6c727e8ca447097bdc6869/classes.dex" />
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_960b19c39170b271db6c727e8ca447097bdc6869.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_e80c3dff41f48e9f866d5a2d71c07afec392b466.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_ebe61740b67ea7b97f4baea7052fa84527a346f6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_32ced7427e2aa5c471de451a442d1099014fa860.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_1e33a89edf552ac7975a9832260d3885ebb56835.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-8.4.0_6b75cce8966dbf37f6bbd84cbd59eea12cd818a1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_2b96c97bb48f2e70d0a8dfd94708781f3975912c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_be73497f5537f09c6f78ae0105759a92fd026dae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-8.4.0_de7aba95ec5cf10362355216314e96f7c6aa94e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/leonardoalps/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_5ce007d6b53b147696bf9d0dc1674d95450091b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/leonardoalps/AndroidStudioProjects/HSVColor/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_996afadb3b9a6bd5e19d6252e3be17bcac69dfe3.jar" />
     </item>
 
 </items>
