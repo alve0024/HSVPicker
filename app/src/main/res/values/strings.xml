@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HSVColor</string>
+    <string name="author">Leonardo Alps (alve0024@algonquinlive.com)</string>
+    <string name="action_about">About</string>
+    <string name="about_dlg">About</string>
+    <string name="hue_label">Hue:</string>
+    <string name="saturation_label">Saturation:</string>
+    <string name="lightness_label">Value / Lightness:</string>
+</resources>
